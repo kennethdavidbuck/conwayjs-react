@@ -15,7 +15,9 @@ class App extends React.Component {
   }
 
   render() {
-    const rows = this.state.board.map((row, index) => <Row key={index} cells={row}/>);
+    const rows = this.state.board.map((row, index) => (
+      <Row key={index} rowIndex={index} cells={row} toggleCell={this.handleToggleCell.bind(this)}/>
+    ));
 
     return (
      <table>
@@ -40,6 +42,11 @@ class App extends React.Component {
     this.setState({
       board: this.game.board
     });
+  }
+
+  handleToggleCell(rowIndex, columnIndex) {
+    this.game.toggleCell(rowIndex, columnIndex);
+    this.setState(this.game.board);
   }
 }
 

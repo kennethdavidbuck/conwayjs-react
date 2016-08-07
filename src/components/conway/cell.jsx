@@ -9,6 +9,7 @@ class App extends React.Component {
       <td>
         <input
           readOnly
+          onClick={() => {this.props.toggleCell(this.props.rowIndex, this.props.columnIndex)}}
           type="checkbox"
           className={`conway-cell ${this.props.cell ? 'alive' : ''}`}
           checked={this.props.cell}/>
