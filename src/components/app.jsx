@@ -10,8 +10,11 @@ class App extends React.Component {
       width: 25,
       height: 25
     }));
-    this.state = { board: this.game.board };
-    this.wait = 250;
+    this.state = {
+      isPlaying: true,
+      wait: 300,
+      board: this.game.board
+    };
   }
 
   render() {
@@ -25,19 +28,27 @@ class App extends React.Component {
 
     return (
      <table>
+       <caption>
+         <button onClick={this.state.isPlaying ? this.handlePause.bind(this) : this.handlePlay.bind(this)}>
+              {this.state.isPlaying ? 'Pause' : 'Play'}
+          </button>
+         <button>Reset</button>
+       </caption>
       <tbody>{rows}</tbody>
      </table>
     );
   }
 
   componentDidMount() {
-    this.run(this.wait);
+    this.run(this.state.wait);
   }
 
   run(wait = 0) {
     setTimeout(() => {
-      this.next();
-      this.run(this.wait);
+      if(this.state.isPlaying) {
+        this.next();
+      }
+      this.run(this.state.wait);
     }, wait);
   }
 
@@ -51,6 +62,18 @@ class App extends React.Component {
   handleToggleCell(rowIndex, columnIndex) {
     this.game.toggleCell(rowIndex, columnIndex);
     this.setState(this.game.board);
+  }
+
+  handlePlay() {
+    this.setState({
+      isPlaying: true
+    });
+  }
+
+  handlePause() {
+    this.setState({
+      isPlaying: false
+    });
   }
 }
 
