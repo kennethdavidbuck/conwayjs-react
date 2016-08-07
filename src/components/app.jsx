@@ -32,7 +32,7 @@ class App extends React.Component {
          <button onClick={this.state.isPlaying ? this.handlePause.bind(this) : this.handlePlay.bind(this)}>
               {this.state.isPlaying ? 'Pause' : 'Play'}
           </button>
-         <button>Reset</button>
+         <button onClick={this.handleReset.bind(this)}>Reset</button>
        </caption>
       <tbody>{rows}</tbody>
      </table>
@@ -62,6 +62,17 @@ class App extends React.Component {
   handleToggleCell(rowIndex, columnIndex) {
     this.game.toggleCell(rowIndex, columnIndex);
     this.setState(this.game.board);
+  }
+
+  handleReset() {
+    this.game = new Conway(Conway.createBoard({
+      width: 25,
+      height: 25
+    }));
+
+    this.setState({
+      board: this.game.board
+    });
   }
 
   handlePlay() {
