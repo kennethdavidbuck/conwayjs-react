@@ -1,32 +1,35 @@
-<html>
+<!DOCTYPE html>
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Conways Game of Lifet </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+    <style>
+        .conway-cell {
+            background: black;
+            cursor: pointer;
+            margin: 0;
+            padding: 0;
+            width: 12px;
+            height: 12px;
+        }
 
-<style>
-    .conway-cell {
-        background: black;
-        cursor: pointer;
-        margin: 0;
-        padding: 0;
-        width: 12px;
-        height: 12px;
-    }
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
 
-    table {
-        border-collapse: collapse;
-        border: 1px solid black;
-        margin: 0 auto;
-    }
+        table tr,td {
+            line-height: 12px;
+        }
 
-    table tr,td {
-        line-height: 12px;
-    }
+    </style>
+    <div class="main-container"></div>
 
-</style>
-<div class="main-container"></div>
-
-<script type="text/javascript" src="bundle.js" charset="utf-8"></script>
+    <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
 </body>
 </html>
