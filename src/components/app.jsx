@@ -11,7 +11,7 @@ class App extends React.Component {
       height: 25
     }));
     this.state = {
-      isPlaying: true,
+      isPlaying: false,
       wait: 300,
       board: this.game.board
     };
