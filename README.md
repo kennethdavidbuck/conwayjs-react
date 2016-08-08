@@ -1,0 +1,1 @@
+## ConwayJS - React Style
