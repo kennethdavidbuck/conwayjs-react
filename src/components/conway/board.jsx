@@ -37,7 +37,9 @@ class App extends React.Component {
           <button onClick={this.state.isPlaying ? this.handlePause.bind(this) : this.handlePlay.bind(this)}>
             {this.state.isPlaying ? 'Pause' : 'Play'}
           </button>
-          <button onClick={this.handleReset.bind(this)}>Reset</button>
+          <button onClick={this.handleReset.bind(this)}>
+            Reset
+          </button>
         </caption>
         <tbody>{rows}</tbody>
       </table>
