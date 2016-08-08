@@ -32,15 +32,15 @@ class App extends React.Component {
     ));
 
     return (
-    <table>
-      <caption>
-        <button onClick={this.state.isPlaying ? this.handlePause.bind(this) : this.handlePlay.bind(this)}>
-          {this.state.isPlaying ? 'Pause' : 'Play'}
-        </button>
-        <button onClick={this.handleReset.bind(this)}>Reset</button>
-      </caption>
-      <tbody>{rows}</tbody>
-    </table>
+      <table>
+        <caption>
+          <button onClick={this.state.isPlaying ? this.handlePause.bind(this) : this.handlePlay.bind(this)}>
+            {this.state.isPlaying ? 'Pause' : 'Play'}
+          </button>
+          <button onClick={this.handleReset.bind(this)}>Reset</button>
+        </caption>
+        <tbody>{rows}</tbody>
+      </table>
     );
   }
 
